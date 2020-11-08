@@ -1,0 +1,94 @@
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: #A1969F;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+#background {
+    background-image: url(https://cdn.discordapp.com/attachments/686088876829573120/775129804432605264/haha_lol_colonP_.png);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.8) saturate(1) blur(10px); 
+    opacity: 0.9;
+    /*filter: blur(10px);*/
+    z-index: 0;
+}
+
+#headercontain {
+    position: fixed;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter:  brightness(1.3) drop-shadow(0px 0px 50px rgba(0,0,0,0.6));
+    z-index: 1;
+   
+}
+
+#headercontain div {
+    animation: headerAnim1 ease-in-out 0.5s infinite alternate;
+}
+
+#headercontain div img {
+    animation: headerAnim2 ease-in-out 1.2s infinite alternate;
+}
+
+a {
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 5px;
+    transform: scale(1);
+    filter: saturate(1) brightness(1) contrast(1);
+    z-index: 1;
+}
+
+a:active {
+    animation: onClick ease-out 30ms forwards;
+    z-index: 10;
+}
+
+@keyframes onClick {
+    from {
+        transform: scale(1);
+        filter: saturate(1) brightness(1) contrast(1);
+    }
+    to {
+        transform: scale(0.6);
+        filter: saturate(2) brightness(1) contrast(1);
+    }
+}
+
+@keyframes headerAnim1 {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes headerAnim2 {
+    from {
+        transform: rotateZ(5deg);
+    }
+    to {
+        transform: rotateZ(-5deg);
+    }
+}

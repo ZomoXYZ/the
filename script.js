@@ -72,14 +72,14 @@ addEventListener("load", function(){
     })
 
     //multiplication
-      document.getElementById("multiply").addEventListener("click", function(){
+    document.getElementById("multiply").addEventListener("click", function(){
         numbers2=numbers;
         numbers="";
         operation="mul";
     })
 
     //divide
-       document.getElementById("division").addEventListener("click", function(){
+    document.getElementById("division").addEventListener("click", function(){
         numbers2=numbers;
         numbers="";
         operation="div";
@@ -91,6 +91,8 @@ addEventListener("load", function(){
         numbers=parseFloat(numbers);
         numbers2=parseFloat(numbers2);
     
+     // if else version
+        /*
         if (operation === "add") {
             numbers+=numbers2; 
         } else if(operation === "sub") {
@@ -99,6 +101,23 @@ addEventListener("load", function(){
             numbers*=numbers2; 
         } else if(operation === "div") {
             numbers=numbers2/numbers;
+        }
+        */
+
+     // perform different tasks based on operation
+        switch (operation) {
+            case "add":
+                numbers += numbers2;
+                break;
+            case "sub":
+                numbers = numbers2 - numbers
+                break;
+            case "mul":
+                numbers *= numbers2;
+                break;
+            case "div":
+                numbers = numbers2 / numbers
+                break;
         }
 
         numbers=numbers.toString(); 

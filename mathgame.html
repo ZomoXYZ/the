@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calc</title>
     <style>
+
+        :root {
+            --padding: 50px;
+        }
+
         body {
             background-image: url(https://w.wallhaven.cc/full/42/wallhaven-42vr76.jpg);
             background-position: center;
@@ -27,18 +32,62 @@
             margin: auto;
             background-color: rgba(20, 20, 20, 0.9);
             border: #fff solid 3px;
+            width: 250px;
         }
 
         #response {
             background-color: black;
             color: rgb(10, 248, 10);
+            overflow-x: clip;
+            width: 100%;
         }
+
 
         #question {
-            color: rgb(145, 145, 255)
+            background-color: black;
+            color: rgb(145, 145, 255);
         }
 
-        a{
+        #score {
+            background-color: black;
+            height: 45px;
+        }
+
+        #tally {
+            background-color: black;
+            color: white;
+            height: 45px;
+        }
+
+        #tally::after {
+            content: 'correct';
+            padding-left: 10px;
+            font-size: 18px;
+            opacity: 0.7;
+        }
+
+        #buttons {
+            margin-top: var(--padding);
+            margin-bottom: var(--padding);
+            
+            -webkit-touch-callout: none; /* iOS Safari */
+              -webkit-user-select: none; /* Safari */
+               -khtml-user-select: none; /* Konqueror HTML */
+                 -moz-user-select: none; /* Old versions of Firefox */
+                  -ms-user-select: none; /* Internet Explorer/Edge */
+                      user-select: none; /* Non-prefixed version, currently
+                                            supported by Chrome, Edge, Opera and Firefox */
+        }
+
+        #buttons .buttonrow {
+            text-align: center;
+        }
+
+        #submit {
+            margin-top: var(--padding);
+        }
+
+        a {
             border: 2px dashed white;
             margin: 0 auto;
             display: block;
@@ -49,6 +98,8 @@
         a:visited{
             color: #0f0;
         }
+
+        
     </style>
     <script src="mathgame.js"></script>
 </head>
@@ -57,28 +108,36 @@
     <div id="question"></div>
     <div id="response"></div>
     <div id="score"></div>
-    <br>
-    <br>
-    <button id="seven">7</button>
-    <button id="eight">8</button>
-    <button id="nine">9</button>
-    <br>
-    <button id="four">4</button>
-    <button id="five">5</button>
-    <button id="six">6</button>
-    <br>
-    <button id="one">1</button>
-    <button id="two">2</button>
-    <button id="three">3</button>
-    <br>
-    <button style="visibility:hidden">6</button>
-    <button id="zero">0</button>
-    <br>
-    <br>
-    <button id="submit">Submit</button>
-    <br>
-    <br>
+    <div id="tally"></div>
+
+    <div id="buttons">
+        <div class="buttonrow">
+            <button id="seven">7</button>
+            <button id="eight">8</button>
+            <button id="nine">9</button>
+        </div>
+        <div class="buttonrow">
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+        </div>
+        <div class="buttonrow">
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+        </div>
+        <div class="buttonrow">
+            <button id="zero">0</button>
+            <button id="back">←</button>
+        </div>
+        <div class="buttonrow">
+            <button id="submit">Submit</button>
+        </div>
+    </div>
+
     <a href="/index.html">home</a>
 </div>
 </body>
 </html>
+
+

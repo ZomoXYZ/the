@@ -6,7 +6,7 @@
     <title>Calc</title>
     <style>
         body {
-            background-image: url(https://w.wallhaven.cc/full/0j/wallhaven-0jk22w.jpg);
+            background-image: url(https://w.wallhaven.cc/full/42/wallhaven-42vr76.jpg);
             background-position: center;
             background-size: cover;
             display: flex;
@@ -22,18 +22,20 @@
             font-size: 40px;
         }
 
-        #calculator {
+        #mathgame {
             display: inline-block;
             margin: auto;
             background-color: rgba(20, 20, 20, 0.9);
             border: #fff solid 3px;
         }
 
-        #display {
+        #response {
             background-color: black;
             color: rgb(10, 248, 10);
-            overflow-x: scroll;
-            width: 262.017px;
+        }
+
+        #question {
+            color: rgb(145, 145, 255)
         }
 
         a{
@@ -47,41 +49,36 @@
         a:visited{
             color: #0f0;
         }
-        
     </style>
-    <script src="script.js"></script>
+    <script src="mathgame.js"></script>
 </head>
 <body>
-<div id="calculator">
-    <div id="display"></div>
+<div id="mathgame">
+    <div id="question"></div>
+    <div id="response"></div>
+    <div id="score"></div>
     <br>
-    <button id="clear">C</button>
-    <button style="visibility:hidden">6</button>
-    <button style="visibility:hidden">9</button>
-    <button id="division">/</button>
     <br>
     <button id="seven">7</button>
     <button id="eight">8</button>
     <button id="nine">9</button>
-    <button id="multiply">x</button>
     <br>
     <button id="four">4</button>
     <button id="five">5</button>
     <button id="six">6</button>
-    <button id="subtraction">-</button>
     <br>
     <button id="one">1</button>
     <button id="two">2</button>
     <button id="three">3</button>
-    <button id="addition">+</button>
     <br>
     <button style="visibility:hidden">6</button>
     <button id="zero">0</button>
-    <button id="dot">.</button>
-    <button id="equals">=</button>
     <br>
     <br>
-    <a href="/index.html" style="">home</a>
+    <button id="submit">Submit</button>
+    <br>
+    <br>
+    <a href="/index.html">home</a>
 </div>
 </body>
 </html>

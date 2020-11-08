@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="index.css">
+    <script>
+        addEventListener('load', () => {
+            document.addEventListener('click', () => {
+                console.log('move');
+                document.querySelector('audio').play();
+            })
+        })
+    </script>
 </head>
 <body>
     <div id="headercontain">
@@ -20,6 +28,6 @@
 
     <div id="background"></div>
 
-    <audio autoplay loop src="/music2.mp3">
+    <audio loop src="/music4.mp3">
 </body>
 </html>

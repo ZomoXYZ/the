@@ -33,8 +33,8 @@ function getRandomOperation() {
 
     //make question
 function makeQuestion(operation) {
-    var random1 = getRandomInt(1, 50);
-	var random2 = getRandomInt(5, 45);
+    var random1 = getRandomInt(1, 10);
+	var random2 = getRandomInt(2, 9);
     var randomAnswer = 0;
     
     //ensure negatives don't happen

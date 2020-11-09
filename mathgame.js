@@ -6,6 +6,21 @@ function clearStuff() {
     //score(element)
 }
  
+//no time
+function noTime(){
+    var element = document.getElementById('score');
+    element.style.color = "#ff0";
+            element.innerText = 'No Time!';
+            var audio = new Audio('notime.mp3');
+audio.play();
+            setTimeout(function() {
+                numbers = "";
+                operation = getRandomOperation();
+                randomAnswer = makeQuestion(operation);
+                clearStuff();
+            }, 2000);
+}
+
     //make random
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min); // generate random number between 1 and 50
@@ -47,7 +62,10 @@ function makeQuestion(operation) {
 
     //the question
 	var q = document.getElementById('question');
-	q.innerText = random1.toString() + ' ' + operation + ' ' + random2.toString();
+    q.innerText = random1.toString() + ' ' + operation + ' ' + random2.toString();
+    setTimeout(function() {
+        noTime();
+    }, 5000);
 
     //maths
 	if (operation === '+') {
@@ -81,10 +99,14 @@ addEventListener("load", function(){
 			element.style.color = "#0f0";
             element.innerText = 'Correct!';
             correct++;
+            var audio = new Audio('correct.mp3');
+audio.play();
 		} else {
             element.style.color = '#f00';
             element.innerText = 'Wrong!';
             incorrect++;
+            var audio = new Audio('wrong.mp3');
+audio.play();
         }
 
         tally(correct, incorrect);

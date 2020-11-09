@@ -1,7 +1,7 @@
 //clear stuff
 function clearStuff() {
     response("0");
-    document.getElementById('score').textContent = "~ ~ ~ ~ ~";
+    document.getElementById('score').textContent = "---------";
     document.getElementById('score').style.color = "#fff";
     //score(element)
 }

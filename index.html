@@ -3,13 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Circuit Hour">
+    <meta name="description" content="Circuit Hour">
+    <meta name="keywords"
+        content="circuit hour, circuit minute, music, beats, soundcloud, spotify, apple music, twitch, youtube, email, twitter, discography, about, shows">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://circuithour.xyz/">
+    <meta property="og:title" content="Circuit Hour">
+    <meta property="og:description" content="Circuit Hour">
+    <meta property="og:image" content="https://circuithour.xyz/imagefile.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://circuithour.xyz/">
+    <meta property="twitter:title" content="Circuit Hour">
+    <meta property="twitter:description" content="Circuit Hour">
+    <meta property="twitter:image" content="https://circuithour.xyz/imagefile.png">
+    
+    <!-- Other -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta content="Circuit Hour" name="apple-mobile-web-app-title">
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="#d589ff" name="theme-color">
+    <meta content="Circuit Hour" name="application-name">
+
     <title>Home</title>
     <link rel="stylesheet" href="index.css">
     <script>
         addEventListener('load', () => {
+            document.querySelector('audio').volume = 0.3;
             document.addEventListener('click', () => {
-                console.log('move');
-                document.querySelector('audio').play();
+                if (document.querySelector('audio').paused)
+                    document.querySelector('audio').play();
+                else
+                    document.querySelector('audio').pause();
             })
         })
     </script>
@@ -20,7 +56,6 @@
             <img src='https://cdn.discordapp.com/attachments/686088876829573120/775124918752116756/awesine_.png'>
         </div>
     </div>
-
     <a draggable=false href="http://soundcloud.com/circuithour"><img draggable=false src="https://cdn.discordapp.com/attachments/686088876829573120/774914647056318474/SOUNDCLOUD_.png"></a>
     <a draggable=false href="http://twitter.com/daisybushbird"><img draggable=false src="https://cdn.discordapp.com/attachments/686088876829573120/774914656363610122/twitter.png"></a>
     <a draggable=false href="/calculator.html"><img draggable=false src="https://cdn.discordapp.com/attachments/686088876829573120/774914683475591198/lol.png"></a>
@@ -28,6 +63,12 @@
 
     <div id="background"></div>
 
-    <audio loop src="/music4.mp3">
+    <div id="lol">
+        <div>
+            click the screen lol
+        </div>
+    </div>
+
+    <audio loop autoplay src="/music4.mp3">
 </body>
 </html>

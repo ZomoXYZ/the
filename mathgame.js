@@ -5,23 +5,6 @@ function clearStuff() {
     document.getElementById('score').style.color = "#fff";
     //score(element)
 }
- 
-//no time
-
-
-function noTime(){
-    var element = document.getElementById('score');
-    element.style.color = "#ff0";
-            element.innerText = 'No Time!';
-            var audio = new Audio('notime.mp3');
-audio.play();
-            setTimeout(function() {
-                numbers = "";
-                operation = getRandomOperation();
-                randomAnswer = makeQuestion(operation);
-                clearStuff();
-            }, 2000);
-}
 
     //make random
 function getRandomInt(min, max) {
@@ -67,8 +50,6 @@ function makeQuestion(operation) {
     //the question
 	var q = document.getElementById('question');
     q.innerText = random1.toString() + ' ' + operation + ' ' + random2.toString();
-    myVar = setTimeout(function() {
-    }, 5000);
 
 
     
@@ -91,47 +72,60 @@ addEventListener("load", function(){
     var numbers = "";
     var operation = getRandomOperation();
     var randomAnswer = makeQuestion(operation);
-    var myVar;
     var correct = 0;
     var incorrect = 0;
+    var audio = null;
+    var timer = null;
+
+    function submit(timerTimeout) {
+        clearTimeout(timer);
+        var btn = document.getElementById("submit");
+        btn.disabled = true;
+
+        var element = document.getElementById('score');
+        if (timerTimeout) {
+            element.style.color = "#ff0";
+            element.innerText = 'No Time!';
+            audio = new Audio('notime.mp3');
+            audio.play();
+        } else if (numbers === randomAnswer.toString()) {
+            element.style.color = "#0f0";
+            element.innerText = 'Correct!';
+            correct++;
+            audio = new Audio('correct.mp3');
+            audio.play();
+        } else {
+            element.style.color = '#f00';
+            element.innerText = 'Wrong!';
+            incorrect++;
+            audio = new Audio('wrong.mp3');
+            audio.play();   
+        }   
+
+        tally(correct, incorrect);
+        setTimeout(function() {  
+            numbers  =  "";
+            operation = getRandomOperation();
+            randomAnswer = makeQuestion(operation);
+            timer = setTimeout(function() {
+                submit(true);
+            }, 5000);
+            clearStuff();  
+        }, 3000);  
+        
+    }
 
     clearStuff();
     tally(correct, incorrect);
 
+    timer = setTimeout(function() {
+        submit(true);
+    }, 5000);
+
     //check maths
-    document.getElementById("submit").addEventListener("click", function(){
-        var btn = document.getElementById("submit");
-        btn.disabled = true;
-        
-        function myStopFunction() {
-          clearTimeout(myVar);
-        }
-
-		var element = document.getElementById('score');
-		if (numbers === randomAnswer.toString()) {
-			element.style.color = "#0f0";
-            element.innerText = 'Correct!';
-            correct++;
-            var audio = new Audio('correct.mp3');
-audio.play();
-		} else {
-            element.style.color = '#f00';
-            element.innerText = 'Wrong!';
-            incorrect++;
-            var audio = new Audio('wrong.mp3');
-audio.play();
-        }
-
-        tally(correct, incorrect);
-        setTimeout(function() {
-            numbers = "";
-            operation = getRandomOperation();
-            randomAnswer = makeQuestion(operation);
-            clearStuff();
-        }, 3000);
-       
-    
-    })
+    document.getElementById("submit").addEventListener("click", function() {
+        submit();
+    });
 
     //buttonms
     document.getElementById("zero").addEventListener("click", function(){

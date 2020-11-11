@@ -9,7 +9,7 @@ addEventListener("load", function(){
     var numbers="";
     var numbers2="";
     var operation="";
-    display (numbers);
+    display(numbers);
 
     document.getElementById("zero").addEventListener("click", function(){
         numbers+="0";
@@ -85,6 +85,15 @@ addEventListener("load", function(){
         operation="div";
     })
 
+    //+- make number negative or positive
+    document.getElementById("pm").addEventListener("click", function(){
+        if (numbers.startsWith('-')) { //numbers is negative
+            numbers = numbers.substring(1); //remove negative sign
+        } else { //number is positive
+            numbers = '-' + numbers; //add negative sign
+        }
+        display(numbers);
+    })
 
     //equals
     document.getElementById("equals").addEventListener("click", function(){
@@ -123,6 +132,7 @@ addEventListener("load", function(){
         numbers=numbers.toString(); 
         numbers2="";
         display(numbers);
+        
     })
     
     //the clear button

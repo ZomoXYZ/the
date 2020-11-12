@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<audio src="https://cdn.discordapp.com/attachments/599361143089397780/776288138934353920/e621.mp3" id= "swag"></audio>
+
+<div id= "clock">
+<img src='https://cdn.discordapp.com/attachments/599361143089397780/776277156899717150/cuyn.png'>
+</div>
+
+<div id= "display">
+
+</div>
+
+<script>
+function fun(str) {
+    document.getElementById("display").textContent=str;    
+}
+function epic(){
+var d = new Date();
+var h = d.getHours();
+var m = d.getMinutes();
+var s = d.getSeconds();
+h = ((h + 11) % 12 + 1);
+var display = fun(`${h}:${m}:${s}`);
+
+if (h === 6 && m === 21 && s === 0){
+    document.getElementById("swag").play();
+}
+}
+setInterval(epic, 1000)
+
+</script>
+</body>
+</html>

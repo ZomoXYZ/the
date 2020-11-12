@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     height: 98vh;  
+    lighting-color: aquamarine
 }
 
 #display 
@@ -12,7 +13,7 @@
     margin: 0;
     padding: 0;
     font-size: 140px;
-    font-family: sans-serif;
+    font-family: serif;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -28,11 +29,13 @@ body{
 #home{
     position: fixed;
     top: 600px;
-    left: 46%;
+    left: 16%;
     font-size: 60px;
     font-family: sans-serif;
     border: #000 solid 3px;
-    border-style: dotted;
-    width: 152px;
-    border-radius: 1px;
+    border-style: dashed;
+    width: 900px;
+    height: 10px;
+    border-radius: 50px;
+    lighting-color: aquamarine
 }

@@ -31,7 +31,7 @@ var h = d.getHours();
 var m = d.getMinutes();
 var s = d.getSeconds();
 h = ((h + 11) % 12 + 1);
-var display = fun(`${h}:${m}:${s}`);
+var display = fun(`${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`);
 
 if (h === 6 && m === 21 && s === 0){
     document.getElementById("swag").play();

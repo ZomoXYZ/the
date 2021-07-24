@@ -74,8 +74,22 @@ addEventListener("load", function(){
     var randomAnswer = makeQuestion(operation);
     var correct = 0;
     var incorrect = 0;
-    var audio = null;
     var timer = null;
+
+    var audio = {
+        notime: new Audio('/resources/sound/mathgame/notime.mp3'),
+        correct: new Audio('/resources/sound/mathgame/correct.mp3'),
+        wrong: new Audio('/resources/sound/mathgame/wrong.mp3')
+    };
+
+    function playAudio(key) {
+        if (key in audio) {
+
+            audio[key].currentTime = 0;
+            audio[key].play();
+
+        }
+    }
 
     function submit(timerTimeout) {
         clearTimeout(timer);
@@ -86,20 +100,17 @@ addEventListener("load", function(){
         if (timerTimeout) {
             element.style.color = "#ff0";
             element.innerText = 'No Time!';
-            audio = new Audio('/resources/sound/mathgame/notime.mp3');
-            audio.play();
+            playAudio('notime');
         } else if (numbers === randomAnswer.toString()) {
             element.style.color = "#0f0";
             element.innerText = 'Correct!';
             correct++;
-            audio = new Audio('/resources/sound/mathgame/correct.mp3');
-            audio.play();
+            playAudio('correct');
         } else {
             element.style.color = '#f00';
             element.innerText = 'Wrong!';
             incorrect++;
-            audio = new Audio('/resources/sound/mathgame/wrong.mp3');
-            audio.play();   
+            playAudio('wrong');
         }   
 
         tally(correct, incorrect);

@@ -23,7 +23,7 @@
 }
 
 body{
-    background-image: url(https://cdn.discordapp.com/attachments/599361143089397780/776278420149108807/funnybitd.png);
+    background-image: url('/resources/picture/funnybitd.png');
 }
 
 #home{

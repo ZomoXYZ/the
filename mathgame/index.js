@@ -86,19 +86,19 @@ addEventListener("load", function(){
         if (timerTimeout) {
             element.style.color = "#ff0";
             element.innerText = 'No Time!';
-            audio = new Audio('/resources/sound/notime.mp3');
+            audio = new Audio('/resources/sound/mathgame/notime.mp3');
             audio.play();
         } else if (numbers === randomAnswer.toString()) {
             element.style.color = "#0f0";
             element.innerText = 'Correct!';
             correct++;
-            audio = new Audio('/resources/sound/correct.mp3');
+            audio = new Audio('/resources/sound/mathgame/correct.mp3');
             audio.play();
         } else {
             element.style.color = '#f00';
             element.innerText = 'Wrong!';
             incorrect++;
-            audio = new Audio('/resources/sound/wrong.mp3');
+            audio = new Audio('/resources/sound/mathgame/wrong.mp3');
             audio.play();   
         }   
 
